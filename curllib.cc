@@ -79,8 +79,8 @@ public:
   static size_t write_data(void *ptr, size_t size, size_t nmemb, void *userdata)
   {
     buffer += std::string((char*)ptr, size*nmemb);
-    std::cerr<<"Wrote: "<<size*nmemb<<" bytes"<<std::endl;
-    std::cerr<<"Buffer size: "<<buffer.size()<<" bytes"<<std::endl;
+    //std::cerr<<"Wrote: "<<size*nmemb<<" bytes"<<std::endl;
+    //std::cerr<<"Buffer size: "<<buffer.size()<<" bytes"<<std::endl;
     return size * nmemb;
   }
 
@@ -92,7 +92,7 @@ public:
   }
 
   static void copy_to_buffer(buff_t &dest, Local<String> &src) {
-    std::cerr<<"copy_to_buffer::Length::"<<src->Length()<<std::endl;
+    //std::cerr<<"copy_to_buffer::Length::"<<src->Length()<<std::endl;
 
     if (src->Length() > 0) {
       dest.resize(src->Length() + 1);
